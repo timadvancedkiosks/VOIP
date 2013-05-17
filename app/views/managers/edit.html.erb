@@ -1,0 +1,14 @@
+<% provide(:title, "Edit URL") %>
+
+<%= render partial: 'shared/error_messages', 
+  locals: { errors: @manager.errors } %>
+
+<%= simple_form_for(@manager, 
+      html: { class: 'form-inline' }) do |f| %>
+
+  <%= f.text_field :url, placeholder: 'URL Address' %>
+  <%= hidden_field_tag(:secret, @secret) %>
+
+  <%= f.submit "Next", class: 'btn btn-primary' %>
+
+<% end %>
